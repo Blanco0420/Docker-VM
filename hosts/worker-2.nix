@@ -1,7 +1,7 @@
 { ... }: {
   imports = [ ../nixos/configuration.nix ];
 
-  networking.interfaces.eth0 = {
+  networking.interfaces.ens18 = {
     useDHCP = false;
     ipv4.addresses = [{
       address = "10.1.2.4";

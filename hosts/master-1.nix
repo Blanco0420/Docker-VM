@@ -2,7 +2,7 @@
   imports = [ ../nixos/configuration.nix ];
 
   networking = {
-    interfaces.eth0 = {
+    interfaces.ens18 = {
       useDHCP = false;
       ipv4.addresses = [{
         address = "10.1.2.2";
@@ -11,7 +11,7 @@
     };
     defaultGateway = {
       address = "10.1.2.1";
-      interface = "eth0";
+      interface = "ens18";
     };
   };
 

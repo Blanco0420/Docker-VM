@@ -82,6 +82,11 @@
     };
   };
 
+  security.sudo = {
+    enable = true;
+    wheelNeedsPassword = false;
+  };
+
   # Enable Docker
   virtualisation.docker = { enable = true; };
 
