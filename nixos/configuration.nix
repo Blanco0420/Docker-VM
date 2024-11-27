@@ -79,6 +79,8 @@
     enableSwarm = true; # Enable Docker Swarm
   };
 
+  services.qemuGuest.enable = true;
+
   # Enable firewall
   networking.firewall = {
     enable = true;
