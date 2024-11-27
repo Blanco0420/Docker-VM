@@ -14,6 +14,17 @@
     ./hardware-configuration.nix
   ];
 
+  boot.loader.grub = {
+    enable = true;
+    device = "/dev/sda";
+    useOSProber = true;
+  };
+
+  networking = {
+    hostName = "docker-worker";
+    networkManager.enable = true;
+  };
+
   nixpkgs = {
     # You can add overlays here
     overlays = [
@@ -52,10 +63,8 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
+  environment.systemPackages = with pkgs; [ git docker-compose docker ];
   # FIXME: Add the rest of your current configuration
-
-  # TODO: Set your hostname
-  networking.hostName = "docker-worker";
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
   users.users = {
