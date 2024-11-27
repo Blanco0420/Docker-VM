@@ -22,7 +22,7 @@
 
   networking = {
     hostName = "docker-worker";
-    networkManager.enable = true;
+    networkmanager.enable = true;
   };
 
   nixpkgs = {
