@@ -74,10 +74,7 @@
   };
 
   # Enable Docker
-  virtualisation.docker = {
-    enable = true;
-    enableSwarm = true; # Enable Docker Swarm
-  };
+  virtualisation.docker = { enable = true; };
 
   services.qemuGuest.enable = true;
 
