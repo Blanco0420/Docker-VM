@@ -90,7 +90,8 @@
   };
 
   # Enable Docker
-  virtualisation.docker = { enable = true; };
+  virtualisation.docker = { enable = true; 
+  daemon.settings.live-restore = false };
 
   services.qemuGuest.enable = true;
 
