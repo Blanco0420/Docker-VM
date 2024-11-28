@@ -65,7 +65,13 @@
     nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
   };
 
-  environment.systemPackages = with pkgs; [ git docker-compose docker systemd ];
+  environment.systemPackages = with pkgs; [
+    git
+    docker-compose
+    docker
+    systemd
+    cifs
+  ];
   # FIXME: Add the rest of your current configuration
 
   # TODO: Configure your system-wide user settings (groups, etc), add more users as needed.
