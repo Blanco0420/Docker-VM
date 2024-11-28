@@ -19,7 +19,7 @@
   fileSystems."/mnt/shared" = {
     device = "u421299-sub4.your-storagebox.de/u421299-sub4";
     fsType = "cifs";
-    options = [ "credentials=/etc/secrets/cifs_credentials" ];
+    options = [ "credentials=/home/docker/Docker-VM/cifs_credentials" ];
   };
 
   swapDevices = [ ];
