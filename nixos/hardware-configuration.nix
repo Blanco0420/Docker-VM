@@ -16,6 +16,11 @@
     device = "/dev/sda1";
     fsType = "ext4";
   };
+  fileSystems."/mnt/shared" = {
+    device = "u421299-sub4.your-storagebox.de/u421299-sub4";
+    fsType = "cifs";
+    options = [ "credentials=/etc/secrets/cifs_credentials" ];
+  };
 
   swapDevices = [ ];
 
