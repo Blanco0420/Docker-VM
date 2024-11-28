@@ -11,5 +11,5 @@
     };
   };
 
-  networking.hostName = lib.mkForce "docker-master";
+  networking.hostName = lib.mkForce "docker-master-1";
 }
