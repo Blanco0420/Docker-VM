@@ -70,7 +70,7 @@
     docker-compose
     docker
     systemd
-    cifs
+    cifs-utils
   ];
   # FIXME: Add the rest of your current configuration
 
