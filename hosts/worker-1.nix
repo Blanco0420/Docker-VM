@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
   imports = [ ../nixos/configuration.nix ];
 
   networking = {
