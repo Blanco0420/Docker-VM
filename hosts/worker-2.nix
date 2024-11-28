@@ -9,9 +9,5 @@
         prefixLength = 24;
       }];
     };
-    defaultGateway = {
-      address = "10.1.2.1";
-      interface = "ens18";
-    };
   };
 }

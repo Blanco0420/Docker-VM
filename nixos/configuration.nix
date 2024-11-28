@@ -23,6 +23,8 @@
   networking = {
     hostName = "docker-worker";
     networkmanager.enable = true;
+    defaultGateway = "10.1.2.1";
+    nameservers = [ "1.1.1.1" "1.0.0.1" ];
   };
 
   nixpkgs = {
@@ -103,8 +105,10 @@
   # Feel free to remove if you don't need it.
   services.openssh = {
     enable = true;
-    permitRootLogin = "no"; # Disallow root login via SSH
-    passwordAuthentication = false; # Enforce SSH key authentication
+    settings = {
+      PermitRootLogin = "no";
+      PasswordAuthentication = false;
+    };
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
