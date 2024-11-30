@@ -16,7 +16,7 @@
     device = "/dev/sda1";
     fsType = "ext4";
   };
-  fileSystems."/mnt/shared" = {
+  fileSystems."/mnt/local" = {
     device = "//1.1.2.120/storage";
     fsType = "cifs";
     options = let
@@ -25,7 +25,19 @@
         "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
 
     in [
-      "${automount_opts},credentials=/etc/nixos/smb-secrets,uid=1001,gid=131"
+      "${automount_opts},credentials=/etc/nixos/secrets/local-smb,uid=1001,gid=131"
+    ];
+  };
+  fileSystems."/mnt/external" = {
+    device = "//u421299-sub4.your-storagebox.de/u421299-sub4";
+    fsType = "cifs";
+    options = let
+      # this line prevents hanging on network split
+      automount_opts =
+        "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+
+    in [
+      "${automount_opts},credentials=/etc/nixos/secrets/external-smb,uid=1001,gid=131"
     ];
   };
 
