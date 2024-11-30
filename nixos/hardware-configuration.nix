@@ -23,9 +23,10 @@
       # this line prevents hanging on network split
       automount_opts =
         "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+      credentialsFile = "local-smb";
 
     in [
-      "${automount_opts},credentials=/etc/nixos/secrets/local-smb,uid=1001,gid=131"
+      "${automount_opts},credentials=/etc/nixos/secrets/${credentialsFile},uid=1001,gid=131"
     ];
   };
   fileSystems."/mnt/external" = {
@@ -35,9 +36,10 @@
       # this line prevents hanging on network split
       automount_opts =
         "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+      credentialsFile = "external-smb";
 
     in [
-      "${automount_opts},credentials=/etc/nixos/secrets/external-smb,uid=1001,gid=131"
+      "${automount_opts},credentials=/etc/nixos/secrets/${credentialsFile},uid=1001,gid=131"
     ];
   };
 
