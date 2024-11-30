@@ -17,7 +17,7 @@
     fsType = "ext4";
   };
   fileSystems."/mnt/local" = {
-    device = "//1.1.2.120/storage";
+    device = "//10.1.2.120/storage";
     fsType = "cifs";
     options = let
       # this line prevents hanging on network split
