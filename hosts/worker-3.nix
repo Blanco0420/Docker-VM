@@ -10,5 +10,5 @@
       }];
     };
   };
-  networking.hostName = lib.mkForce "docker-worker-3";
+  networking.hostName = lib.mkForce "docker-worker3";
 }
