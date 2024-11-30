@@ -17,7 +17,7 @@
     fsType = "ext4";
   };
   fileSystems."/mnt/shared" = {
-    device = "//u421299-sub4.your-storagebox.de/u421299-sub4";
+    device = "//1.1.2.120/storage";
     fsType = "cifs";
     options = let
       # this line prevents hanging on network split
