@@ -29,7 +29,7 @@
     options = let
       secretPath = config.age.secrets.external-smb.path;
       automount_opts =
-        "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+        "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s";
     in [
       "${automount_opts},credentials=${config.age.secrets.external-smb.path}"
     ];
