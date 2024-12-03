@@ -7,6 +7,12 @@
     useOSProber = true;
   };
 
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = true;
+    flake = "github:Blanco0420/Docker-VM";
+  };
+
   networking = {
     networkmanager.enable = true;
     defaultGateway = "10.1.2.1";
