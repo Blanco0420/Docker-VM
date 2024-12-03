@@ -17,14 +17,18 @@ in {
     device = "//u421299-sub4.your-storagebox.de/u421299-sub4";
     fsType = "cifs";
     options = [
-      "${mountops},credentials=${config.age.secrets.external-smb.path},uid=${config.users.users.docker.uid}"
+      "${mountops},credentials=${config.age.secrets.external-smb.path},uid=${
+        builtins.toString config.users.users.docker.uid
+      }"
     ];
   };
   fileSystems."/mnt/local" = {
     device = "//10.1.2.120/storage";
     fsType = "cifs";
     options = [
-      "${mountops},credentials=${config.age.secrets.local-smb.path},uid=${config.users.users.docker.uid}"
+      "${mountops},credentials=${config.age.secrets.local-smb.path},uid=${
+        builtins.toString config.users.users.docker.uid
+      }"
     ];
   };
   swapDevices = [ ];
