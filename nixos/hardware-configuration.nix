@@ -15,11 +15,11 @@ in {
     fsType = "cifs";
     options = ["${mountops},credentials=${config.age.secrets.external-smb.path}"];
   };
-  fileSystems."/mnt/local" = {
-    device = "//10.1.2.120/storage";
-    fsType = "cifs";
-    options = ["${mountops},credentials=${config.age.secrets.local-smb.path}"];
-  };
+#  fileSystems."/mnt/local" = {
+#    device = "//10.1.2.120/storage";
+#    fsType = "cifs";
+#    options = ["${mountops},credentials=${config.age.secrets.local-smb.path}"];
+#  };
 swapDevices = [ ];
 networking.useDHCP = lib.mkDefault true;
 nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
