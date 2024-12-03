@@ -16,21 +16,19 @@
     device = "//10.1.2.120/storage";
     fsType = "cifs";
     options = let
+      secretPath = config.age.secrets.local-smb.path;
       automount_opts =
         "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-    in [
-      "${automount_opts},credentials=${config.age.secrets.local-smb.path},uid=1001,gid=131"
-    ];
+    in [ "${automount_opts},credentials=${secretPath},uid=1001,gid=131" ];
   };
   fileSystems."/mnt/external" = {
     device = "//u421299-sub4.your-storagebox.de/u421299-sub4";
     fsType = "cifs";
     options = let
+      secretPath = config.age.secrets.external-smb.path;
       automount_opts =
         "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-    in [
-      "${automount_opts},credentials=${config.age.secrets.external-smb.path},uid=1001,gid=131"
-    ];
+    in [ "${automount_opts},credentials=${secretPath},uid=1001,gid=131" ];
   };
   swapDevices = [ ];
   networking.useDHCP = lib.mkDefault true;
