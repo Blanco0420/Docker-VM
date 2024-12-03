@@ -66,6 +66,12 @@
   virtualisation.docker = {
     enable = true;
     daemon.settings.live-restore = false;
+    rootless = {
+        enable = true;
+        setSocketVariable = true;
+    daemon.settings = {
+        userns-remap = "hadi";
+      };
   };
 
   services.qemuGuest.enable = true;
