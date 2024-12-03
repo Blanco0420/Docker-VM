@@ -65,8 +65,8 @@
   services.qemuGuest.enable = true;
 
   age.secrets = {
-    local-smb.file = ../secrets/external-smb.age;
-    external-smb.file = ../secrets/local-smb.age;
+    local-smb.file = ../secrets/local-smb.age;
+    external-smb.file = ../secrets/external-smb.age;
   };
 
   networking.firewall = {
