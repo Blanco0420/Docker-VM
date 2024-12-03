@@ -19,7 +19,7 @@
       automount_opts =
         "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
     in [
-      "${automount_opts},credentials=config.${config.age.secrets.local-smb.path},uid=1001,gid=131"
+      "${automount_opts},credentials=${config.age.secrets.local-smb.path},uid=1001,gid=131"
     ];
   };
   fileSystems."/mnt/external" = {
@@ -29,7 +29,7 @@
       automount_opts =
         "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
     in [
-      "${automount_opts},credentials=config.${config.age.secrets.external-smb.path},uid=1001,gid=131"
+      "${automount_opts},credentials=${config.age.secrets.external-smb.path},uid=1001,gid=131"
     ];
   };
   swapDevices = [ ];
