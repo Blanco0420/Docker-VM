@@ -17,14 +17,14 @@ in {
     device = "//u421299-sub4.your-storagebox.de/u421299-sub4";
     fsType = "cifs";
     options = [
-      "${mountops},credentials=${config.age.secrets.external-smb.path},uid=1001,gid=131"
+      "${mountops},credentials=${config.age.secrets.external-smb.path},uid=1001,gid=131,file_mode=0776,dir_mode=0776"
     ];
   };
   fileSystems."/mnt/local" = {
     device = "//10.1.2.120/storage";
     fsType = "cifs";
     options = [
-      "${mountops},credentials=${config.age.secrets.local-smb.path},uid=1001,gid=131"
+      "${mountops},credentials=${config.age.secrets.local-smb.path},uid=1001,gid=131,file_mode=0776,dir_mode=0776"
     ];
   };
   swapDevices = [ ];
