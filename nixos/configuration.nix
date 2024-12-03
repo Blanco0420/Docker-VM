@@ -1,7 +1,5 @@
 { inputs, lib, config, pkgs, ... }: {
-  imports = [
-    ./hardware-configuration.nix
-  ];
+  imports = [ ./hardware-configuration.nix ];
 
   boot.loader.grub = {
     enable = true;
@@ -16,26 +14,22 @@
   };
 
   nixpkgs = {
-    overlays = [
-    ];
-    config = {
-      allowUnfree = true;
-    };
+    overlays = [ ];
+    config = { allowUnfree = true; };
   };
 
-  nix =
-    let flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-    in {
-      settings = {
-        experimental-features = "nix-command flakes";
-        flake-registry = "";
-        nix-path = config.nix.nixPath;
-      };
-      channel.enable = false;
-
-      registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
-      nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+  nix = let flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+  in {
+    settings = {
+      experimental-features = "nix-command flakes";
+      flake-registry = "";
+      nix-path = config.nix.nixPath;
     };
+    channel.enable = false;
+
+    registry = lib.mapAttrs (_: flake: { inherit flake; }) flakeInputs;
+    nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") flakeInputs;
+  };
 
   environment.systemPackages = with pkgs; [
     git
@@ -70,10 +64,9 @@
 
   services.qemuGuest.enable = true;
 
-
   age.secrets = {
-    local-smb.file = ./secrets/external-smb.age;
-    external-smb.file = ./secrets/local-smb.age;
+    local-smb.file = ../secrets/external-smb.age;
+    external-smb.file = ../secrets/local-smb.age;
   };
 
   networking.firewall = {
