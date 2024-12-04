@@ -39,8 +39,6 @@
 
   environment.systemPackages = with pkgs; [
     git
-    docker-compose
-    docker
     systemd
     cifs-utils
   ];
