@@ -22,7 +22,7 @@ in {
   "external-smb.age".publicKeys = users ++ servers;
   "docker-ssh-key.age".publicKeys = users ++ servers;
   "comin-auth-token.age".publicKeys = users ++ servers;
-  "glusterca.age".publicKeys = users ++ servers
+  "glusterca.age".publicKeys = users ++ servers;
   "glusterkey-docker-master-1.age".publicKeys = users ++ servers;
   "glusterpem-docker-master-1.age".publicKeys = users ++ servers;
   "glusterkey-docker-master-2.age".publicKeys = users ++ servers;

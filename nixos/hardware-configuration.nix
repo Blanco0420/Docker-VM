@@ -7,7 +7,7 @@
   boot.extraModulePackages = [ ];
   fileSystems."/" = {
     device = "/dev/sda1";
-    fsType = "ext4";
+    fsType = "vfat";
   };
   swapDevices = [ ];
   networking.useDHCP = lib.mkDefault true;

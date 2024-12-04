@@ -3,7 +3,7 @@
     disk = {
       xda1 = {
         type = "disk";
-        device = "/dev/xda1";
+        device = "/dev/ada1";
         content = {
           type = "gpt";
           partitions = {
@@ -40,8 +40,8 @@
                       mountpoint = "/nix";
                       mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
                     };
-                    "/shared" = {
-                      mountpoint = "/shared";
+                    "/gluster" = {
+                      mountpoint = "/gluster";
                       mountOptions = ["subvol=shared" "compress=zstd" "noatime"];
                     };
                     "/log" = {
@@ -50,7 +50,7 @@
                     };
                     "/swap" = {
                       mountpoint = "/swap";
-                      swap.swapfile.size = "64G";
+                      swap.swapfile.size = "8G";
                     };
                   };
                 };
@@ -62,6 +62,6 @@
     };
   };
 
-  fileSystems."/persist".neededForBoot = true;
+  fileSystems."/gluster".neededForBoot = true;
   fileSystems."/var/log".neededForBoot = true;
 }
