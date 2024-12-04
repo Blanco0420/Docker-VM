@@ -11,4 +11,6 @@
       "_netdev"
     ];
   };
+  fileSystems."/gluster".neededForBoot = true;
+  fileSystems."/var/log".neededForBoot = true;
 }
