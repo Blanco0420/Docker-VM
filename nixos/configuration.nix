@@ -66,10 +66,10 @@
   virtualisation.docker = {
     enable = true;
     daemon.settings.live-restore = false;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
+    # rootless = {
+    #   enable = true;
+    #   setSocketVariable = true;
+    # };
   };
 
   services.qemuGuest.enable = true;
