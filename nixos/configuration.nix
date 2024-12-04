@@ -67,10 +67,10 @@
   virtualisation.docker = {
     enable = true;
     daemon.settings.live-restore = false;
-    # rootless = {
-    #   enable = true;
-    #   setSocketVariable = true;
-    # };
+     rootless = {
+       enable = true;
+       setSocketVariable = true;
+     };
   };
 
   services.qemuGuest.enable = true;
@@ -78,6 +78,7 @@
   age.secrets = {
     local-smb.file = ../secrets/local-smb.age;
     external-smb.file = ../secrets/external-smb.age;
+    docker-ssh-key.file = ../secrets/docker-ssh-key.age
   };
 
   networking.firewall = {
