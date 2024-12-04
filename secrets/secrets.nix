@@ -16,4 +16,5 @@ let
 in {
   "local-smb.age".publicKeys = users ++ servers;
   "external-smb.age".publicKeys = users ++ servers;
+  "docker-ssh-key.age".publicKeys = users ++ servers
 }

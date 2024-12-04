@@ -2,10 +2,10 @@
 let
   mountops =
     "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5,noperm";
-in {
+in
+{
   imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
-  boot.initrd.availableKernelModules =
-    [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod" ];
+  boot.initrd.availableKernelModules = [ "ata_piix" "uhci_hcd" "virtio_pci" "virtio_scsi" "sd_mod" "sr_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
@@ -25,6 +25,21 @@ in {
     options =
       [ "${mountops},credentials=${config.age.secrets.local-smb.path}" ];
   };
+  {
+  fileSystems."/mnt/external2" = {
+    device = "u421299-sub4.your-storagebox.de/u421299-sub4";
+    fsType = "fuse.sshfs";
+    options = [
+      "identityfile=${config.age.secrets.docker-ssh-key.path}"
+      "idmap=user"
+      "x-systemd.automount" 
+      "allow_other" 
+      "user"
+      "_netdev"
+    ];
+  };
+  boot.supportedFilesystems."fuse.sshfs" = true;
+}
   swapDevices = [ ];
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
