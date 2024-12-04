@@ -65,14 +65,14 @@
     wheelNeedsPassword = false;
   };
 
-  virtualisation.docker = {
-    enable = true;
-    daemon.settings.live-restore = false;
-    rootless = {
-      enable = true;
-      setSocketVariable = true;
-    };
-  };
+  # virtualisation.docker = {
+  #   enable = true;
+  #   daemon.settings.live-restore = false;
+  #   rootless = {
+  #     enable = true;
+  #     setSocketVariable = true;
+  #   };
+  # };
 
   services.qemuGuest.enable = true;
 
