@@ -56,14 +56,6 @@
           "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIL4juA+knvCJmmL8BKmtCHxdwQewdNUXY25UK5jyH1l3AAAAGnNzaDpQaGlvblNlY3VyaXR5X01haW5fU1NI"
         ];
         extraGroups = [ "wheel" "docker" ];
-        uid = 1000;
-      };
-    };
-    groups = {
-      docker = {
-        name = "docker";
-        gid = lib.mkForce 1000;
-
       };
     };
   };

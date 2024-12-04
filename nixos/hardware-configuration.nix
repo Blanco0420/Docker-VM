@@ -1,7 +1,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 let
   mountops =
-    "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
+    "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5,noperm";
 in {
   imports = [ (modulesPath + "/profiles/qemu-guest.nix") ];
   boot.initrd.availableKernelModules =
