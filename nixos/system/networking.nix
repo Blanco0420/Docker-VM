@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ ... }: {
   networking = {
     networkmanager.enable = true;
     defaultGateway = "10.1.2.1";

@@ -12,7 +12,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, agenix, comin, ... }@inputs:
+  outputs = { self, nixpkgs, agenix, comin, disko, ... }@inputs:
     let inherit (self) outputs;
     in {
       nixosConfigurations = {

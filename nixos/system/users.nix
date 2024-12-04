@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ ... }: {
   users = {
     users = {
       docker = {

@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, ... }: {
+{ config, ... }: {
   fileSystems."/mnt/external" = {
     device = "u421299-sub4.your-storagebox.de/u421299-sub4";
     fsType = "fuse.sshfs";
