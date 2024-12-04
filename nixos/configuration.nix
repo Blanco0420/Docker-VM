@@ -41,6 +41,7 @@
     git
     systemd
     cifs-utils
+    qemu
   ];
   users = {
     users = {
