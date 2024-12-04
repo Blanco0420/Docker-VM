@@ -1,0 +1,67 @@
+{
+  disko.devices = {
+    disk = {
+      xda1 = {
+        type = "disk";
+        device = "/dev/xda1";
+        content = {
+          type = "gpt";
+          partitions = {
+            ESP = {
+              label = "boot";
+              name = "ESP";
+              size = "512M";
+              type = "EF00";
+              content = {
+                type = "filesystem";
+                format = "vfat";
+                mountpoint = "/boot";
+                mountOptions = [
+                  "defaults"
+                ];
+              };
+            };
+            disk = {
+              size = "100%";
+              label = "disk";
+                content = {
+                  type = "btrfs";
+                  extraArgs = ["-L" "nixos" "-f"];
+                  subvolumes = {
+                    "/root" = {
+                      mountpoint = "/";
+                      mountOptions = ["subvol=root" "compress=zstd" "noatime"];
+                    };
+                    "/home" = {
+                      mountpoint = "/home";
+                      mountOptions = ["subvol=home" "compress=zstd" "noatime"];
+                    };
+                    "/nix" = {
+                      mountpoint = "/nix";
+                      mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
+                    };
+                    "/shared" = {
+                      mountpoint = "/shared";
+                      mountOptions = ["subvol=shared" "compress=zstd" "noatime"];
+                    };
+                    "/log" = {
+                      mountpoint = "/var/log";
+                      mountOptions = ["subvol=log" "compress=zstd" "noatime"];
+                    };
+                    "/swap" = {
+                      mountpoint = "/swap";
+                      swap.swapfile.size = "64G";
+                    };
+                  };
+                };
+              };
+            };
+          };
+        };
+      };
+    };
+  };
+
+  fileSystems."/persist".neededForBoot = true;
+  fileSystems."/var/log".neededForBoot = true;
+}
