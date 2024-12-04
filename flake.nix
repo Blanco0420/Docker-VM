@@ -1,9 +1,11 @@
 {
-  description = "Nix Config";
+  description = "Docker VM's Nix Config";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs";
     agenix.url = "github:ryantm/agenix";
+    disko.url = "github:nix-community/disko/latest";
+    disko.inputs.nixpkgs.follows = "nixpkgs";
     comin = {
       url = "github:nlewo/comin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,8 +21,10 @@
           modules = [
             ./nixos/configuration.nix
             ./hosts/master-1.nix
+            ./nixos/disk-config.nix
             comin.nixosModules.comin
             agenix.nixosModules.default
+            disko.nixosModules.disko
             ({ ... }: {
               services.comin = {
                 enable = true;
@@ -41,8 +45,10 @@
           modules = [
             ./nixos/configuration.nix
             ./hosts/master-2.nix
+            ./nixos/disk-config.nix
             comin.nixosModules.comin
             agenix.nixosModules.default
+            disko.nixosModules.disko
             ({ ... }: {
               services.comin = {
                 enable = true;
@@ -63,8 +69,10 @@
           modules = [
             ./nixos/configuration.nix
             ./hosts/worker-1.nix
+            ./nixos/disk-config.nix
             comin.nixosModules.comin
             agenix.nixosModules.default
+            disko.nixosModules.disko
             ({ ... }: {
               services.comin = {
                 enable = true;
@@ -85,8 +93,10 @@
           modules = [
             ./nixos/configuration.nix
             ./hosts/worker-2.nix
+            ./nixos/disk-config.nix
             comin.nixosModules.comin
             agenix.nixosModules.default
+            disko.nixosModules.disko
             ({ ... }: {
               services.comin = {
                 enable = true;
@@ -107,8 +117,10 @@
           modules = [
             ./nixos/configuration.nix
             ./hosts/worker-3.nix
+            ./nixos/disk-config.nix
             comin.nixosModules.comin
             agenix.nixosModules.default
+            disko.nixosModules.disko
             ({ ... }: {
               services.comin = {
                 enable = true;
@@ -129,8 +141,10 @@
           modules = [
             ./nixos/configuration.nix
             ./hosts/worker-4.nix
+            ./nixos/disk-config.nix
             comin.nixosModules.comin
             agenix.nixosModules.default
+            disko.nixosModules.disko
             ({ ... }: {
               services.comin = {
                 enable = true;

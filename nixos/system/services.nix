@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ config, ... }: {
 
   services = {
     qemuGuest.enable = true;
@@ -12,9 +12,9 @@
     glusterfs = {
       enable = true;
       tlsSettings = {
-        tlsPem = ${config.age.secrets.glusterpem-${hostName}.path};
-        tlsKeyPath = ${config.age.secrets.glusterkey-${hostName}.path};
-        caCert = ${config.age.secrets.glusterca.path};
+        tlsPem = "${config.age.secrets.glusterpem.path}";
+        tlsKeyPath = "${config.age.secrets.glusterkey.path}";
+        caCert = "${config.age.secrets.glusterca.path}";
       };
     };
   };
