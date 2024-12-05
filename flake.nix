@@ -19,6 +19,10 @@
         docker-master-1 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
+            ./config/networking.nix {
+              ipAddress = 10.1.2.2;
+              hostname = "docker-master-1";
+            }
             ./nixos/configuration.nix
             ./hosts/master-1.nix
             ./nixos/disk-config.nix
@@ -43,6 +47,11 @@
         docker-master-2 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
+          ./config/networking.nix {
+              ipAddress = 10.1.2.3;
+              hostname = "docker-master-2";
+            }
+
             ./nixos/configuration.nix
             ./hosts/master-2.nix
             ./nixos/disk-config.nix
@@ -67,6 +76,11 @@
         docker-worker-1 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
+          ./config/networking.nix {
+              ipAddress = 10.1.2.4;
+              hostname = "docker-worker-1";
+            }
+
             ./nixos/configuration.nix
             ./hosts/worker-1.nix
             ./nixos/disk-config.nix
@@ -91,6 +105,11 @@
         docker-worker-2 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
+          ./config/networking.nix {
+              ipAddress = 10.1.2.5;
+              hostname = "docker-worker-2";
+            }
+
             ./nixos/configuration.nix
             ./hosts/worker-2.nix
             ./nixos/disk-config.nix
@@ -115,6 +134,11 @@
         docker-worker-3 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
+          ./config/networking.nix {
+              ipAddress = 10.1.2.5;
+              hostname = "docker-worker-3";
+            }
+
             ./nixos/configuration.nix
             ./hosts/worker-3.nix
             ./nixos/disk-config.nix
@@ -139,6 +163,11 @@
         docker-worker-4 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
+          ./config/networking.nix {
+              ipAddress = 10.1.2.6;
+              hostname = "docker-worker-4";
+            }
+
             ./nixos/configuration.nix
             ./hosts/worker-4.nix
             ./nixos/disk-config.nix
