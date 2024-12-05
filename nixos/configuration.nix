@@ -5,13 +5,15 @@
     ./system/mounts.nix
     ./system/users.nix
     ./system/services.nix
+    ./disk-config.nix
   ];
 
-  boot.loader.grub = {
-    enable = true;
-    device = "/dev/sda1";
-    useOSProber = true;
-  };
+boot = {
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+    supportedFilesystems = lib.mkForce ["btrfs"];
+    kernelPackages = pkgs.linuxPackages_latest;
+    };
 
   system.autoUpgrade = {
     enable = true;

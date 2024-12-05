@@ -21,7 +21,6 @@
           modules = [
             ./nixos/configuration.nix
             ./hosts/master-1.nix
-            ./nixos/disk-config.nix
             comin.nixosModules.comin
             agenix.nixosModules.default
             disko.nixosModules.disko
@@ -45,7 +44,6 @@
           modules = [
             ./nixos/configuration.nix
             ./hosts/master-2.nix
-            ./nixos/disk-config.nix
             comin.nixosModules.comin
             agenix.nixosModules.default
             disko.nixosModules.disko
@@ -69,7 +67,6 @@
           modules = [
            ./nixos/configuration.nix
             ./hosts/worker-1.nix
-            ./nixos/disk-config.nix
             comin.nixosModules.comin
             agenix.nixosModules.default
             disko.nixosModules.disko
@@ -93,7 +90,6 @@
           modules = [
             ./nixos/configuration.nix
             ./hosts/worker-2.nix
-            ./nixos/disk-config.nix
             comin.nixosModules.comin
             agenix.nixosModules.default
             disko.nixosModules.disko
@@ -117,7 +113,6 @@
           modules = [
             ./nixos/configuration.nix
             ./hosts/worker-3.nix
-            ./nixos/disk-config.nix
             comin.nixosModules.comin
             agenix.nixosModules.default
             disko.nixosModules.disko
@@ -141,7 +136,6 @@
           modules = [
             ./nixos/configuration.nix
             ./hosts/worker-4.nix
-            ./nixos/disk-config.nix
             comin.nixosModules.comin
             agenix.nixosModules.default
             disko.nixosModules.disko
