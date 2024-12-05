@@ -1,16 +1,24 @@
 { config, pkgs, lib, ... }:
 
-{ ipAddress, hostname }:
-
 {
+  options.networkConf = {
+    ipAddress = lib.mkOption {
+      type = lib.types.string;
+    };
+    hostname = lib.mkOption {
+      type = lib.types.string;
+    };
+  };
+  config = {
   networking = {
     interfaces.ens18 = {
       useDHCP = false;
       ipv4.addresses = [{
-        address = ipAddress;
+        address = config.networkConf.ipAddress;
         prefixLength = 24;
       }];
     };
-    hostname = hostname;
+    hostName = config.networkConf.hostname;
+  };
   };
 }

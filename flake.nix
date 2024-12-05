@@ -19,10 +19,7 @@
         docker-master-1 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-            ./config/networking.nix {
-              ipAddress = 10.1.2.2;
-              hostname = "docker-master-1";
-            }
+            ./config/networking.nix
             ./nixos/configuration.nix
             ./hosts/master-1.nix
             ./nixos/disk-config.nix
@@ -40,6 +37,10 @@
                   #                  auth.access_token_path = ${config.age.secrets.comin-auth-token.path};
                 }];
               };
+              networkConf = {
+                ipAddress = 10.1.2.2;
+                hostname = "docker-master-1";
+              };
             })
           ];
           #        machineId = "22823ba6c96947e78b006c51a56fd89c";
@@ -47,11 +48,13 @@
         docker-master-2 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-          ./config/networking.nix {
+./config/networking.nix ({ config, ...}:{
+            networkConf = {
               ipAddress = 10.1.2.3;
               hostname = "docker-master-2";
-            }
-
+            };
+            })
+          
             ./nixos/configuration.nix
             ./hosts/master-2.nix
             ./nixos/disk-config.nix
@@ -76,11 +79,12 @@
         docker-worker-1 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-          ./config/networking.nix {
-              ipAddress = 10.1.2.4;
+./config/networking.nix ({ config, ...}:{
+            networkConf = {
+              ipAddress = 10.1.2.3;
               hostname = "docker-worker-1";
-            }
-
+            };
+            })
             ./nixos/configuration.nix
             ./hosts/worker-1.nix
             ./nixos/disk-config.nix
@@ -105,11 +109,12 @@
         docker-worker-2 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-          ./config/networking.nix {
-              ipAddress = 10.1.2.5;
+./config/networking.nix ({ config, ...}:{
+            networkConf = {
+              ipAddress = 10.1.2.4;
               hostname = "docker-worker-2";
-            }
-
+            };
+            })
             ./nixos/configuration.nix
             ./hosts/worker-2.nix
             ./nixos/disk-config.nix
@@ -134,10 +139,12 @@
         docker-worker-3 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-          ./config/networking.nix {
+./config/networking.nix ({ config, ...}:{
+            networkConf = {
               ipAddress = 10.1.2.5;
               hostname = "docker-worker-3";
-            }
+            };
+            })
 
             ./nixos/configuration.nix
             ./hosts/worker-3.nix
@@ -163,10 +170,12 @@
         docker-worker-4 = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
-          ./config/networking.nix {
+./config/networking.nix ({ config, ...}:{
+            networkConf = {
               ipAddress = 10.1.2.6;
               hostname = "docker-worker-4";
-            }
+            };
+            })
 
             ./nixos/configuration.nix
             ./hosts/worker-4.nix
