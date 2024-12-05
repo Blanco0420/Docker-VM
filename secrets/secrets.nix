@@ -7,15 +7,15 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICvuFtf+mfqywoE4+BNNJ6yhI20i99guVc0fkfslShO7 blanco@blancorog";
   users = [ workstation blanco shared ];
   docker-master-1 =
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOYk1kuyRky/c8zK/NvsXJ7JSfqm89yxa0G+O0UG163j";
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJqgh0O6WhT8sW/8TIAQ+dGCjjBD4/nGDPiBGIhBCW2G";
   docker-master-2 =
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOYk1kuyRky/c8zK/NvsXJ7JSfqm89yxa0G+O0UG163j";
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM58cq1Tt1F4nVlnZZqwoGoMM3SiqY6GZUUfFlJ0cQNZ";
   docker-worker-1 =
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICVbERun5w854/R/XuLSb0l3mr0hM1VI+6MyqOQ4ADRx";
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGMIOqm0uHvm14QnptY7GXrcfREICKS9vc3QaZSPeuyK";
   docker-worker-2 =
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO+6BwyvkJ+Ao9qFBlswYvMd2HwpQMj6q1PVjJ5hUril";
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMAA1FtsuQF0E5wBXFtmSR1KQdVX0nAyRoIB8xHaB6dT";
   docker-worker-3 =
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICZYEGNYCm78oN1bBlWiPoUzbos5N7paU6M+r+x+3FfY";
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKjCrk2o0KRZ/gdDE4uOEPs93tb+RVYMWWH/YqWoF1jp";
   docker-worker-4 =
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICZYEGNYCm78oN1bBlWiPoUzbos5N7paU6M+r+x+3FfY";
   servers = [ docker-master-1 docker-master-2 docker-worker-1 docker-worker-2 docker-worker-3 docker-worker-4 ];
