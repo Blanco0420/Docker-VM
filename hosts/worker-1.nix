@@ -1,5 +1,9 @@
 { lib, ... }: {
-  imports = [ ../nixos/configuration.nix ];
+imports = [ ../nixos/configuration.nix ../config/networking.nix];
+  networkConf = {
+    ipAddress = "10.1.2.4";
+    hostname = "docker-worker-1";
+  };
 
     age.secrets = {
     local-smb.file = ../secrets/local-smb.age;
