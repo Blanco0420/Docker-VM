@@ -3,7 +3,7 @@
     disk = {
       xda1 = {
         type = "disk";
-        device = "/dev/ada1";
+        device = "/dev/sda";
         content = {
           type = "gpt";
           partitions = {

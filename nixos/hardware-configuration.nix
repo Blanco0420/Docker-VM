@@ -6,7 +6,7 @@
   boot.kernelModules = [ ];
   boot.extraModulePackages = [ ];
   fileSystems."/" = {
-    device = "/dev/sda1";
+    device = "/dev/sda";
     fsType = "btrfs";
   };
   swapDevices = [ ];
