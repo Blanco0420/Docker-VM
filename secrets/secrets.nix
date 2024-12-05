@@ -3,7 +3,9 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOxQd8uI865VoHU6xa7hU1EOsmNSxlhRYG5Hh26+3i0a user@desktop";
   blanco =
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOC0ZVHQd0YmATfslSTtmXB7jcOGKmYdOBrwaY5TY1Nm blanco@blancorog";
-  users = [ workstation blanco ];
+  shared = 
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICvuFtf+mfqywoE4+BNNJ6yhI20i99guVc0fkfslShO7 blanco@blancorog";
+  users = [ workstation blanco shared ];
   docker-master-1 =
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOYk1kuyRky/c8zK/NvsXJ7JSfqm89yxa0G+O0UG163j";
   docker-master-2 =
