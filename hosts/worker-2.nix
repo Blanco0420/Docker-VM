@@ -1,7 +1,7 @@
 { lib, ... }: {
 imports = [ ../nixos/configuration.nix ../config/networking.nix];
   networkConf = {
-    ipAddress = "10.1.2.5";
+    ipAddress = "10.1.2.102";
     hostname = "docker-worker-2";
   };
 

@@ -1,7 +1,7 @@
 { lib, ... }: {
   imports = [ ../nixos/configuration.nix ../config/networking.nix];
   networkConf = {
-    ipAddress = "10.1.2.2";
+    ipAddress = "10.1.2.11";
     hostname = "docker-master-1";
   };
   age.secrets = {

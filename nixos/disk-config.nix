@@ -1,7 +1,7 @@
 {
   disko.devices = {
     disk = {
-      xda1 = {
+      sda = {
         type = "disk";
         device = "/dev/sda";
         content = {
@@ -21,37 +21,35 @@
                 ];
               };
             };
-            disk = {
+            root = {
               size = "100%";
-              label = "disk";
-                content = {
-                  type = "btrfs";
-                  extraArgs = ["-L" "nixos" "-f"];
-                  subvolumes = {
-                    "/root" = {
-                      mountpoint = "/";
-                      mountOptions = ["subvol=root" "compress=zstd" "noatime"];
-                    };
-                    "/home" = {
-                      mountpoint = "/home";
-                      mountOptions = ["subvol=home" "compress=zstd" "noatime"];
-                    };
-                    "/nix" = {
-                      mountpoint = "/nix";
-                      mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
-                    };
-                    "/gluster" = {
-                      mountpoint = "/gluster";
-                      mountOptions = ["subvol=shared" "compress=zstd" "noatime"];
-                    };
-                    "/log" = {
-                      mountpoint = "/var/log";
-                      mountOptions = ["subvol=log" "compress=zstd" "noatime"];
-                    };
-                    "/swap" = {
-                      mountpoint = "/swap";
-                      swap.swapfile.size = "8G";
-                    };
+              content = {
+                type = "btrfs";
+                extraArgs = ["-L" "nixos" "-f"];
+                subvolumes = {
+                  "/root" = {
+                    mountpoint = "/";
+                    mountOptions = ["subvol=root" "compress=zstd" "noatime"];
+                  };
+                  "/home" = {
+                    mountpoint = "/home";
+                    mountOptions = ["subvol=home" "compress=zstd" "noatime"];
+                  };
+                  "/nix" = {
+                    mountpoint = "/nix";
+                    mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
+                  };
+                  "/persist" = {
+                    mountpoint = "/persist";
+                    mountOptions = ["subvol=persist" "compress=zstd" "noatime"];
+                  };
+                  "/log" = {
+                    mountpoint = "/var/log";
+                    mountOptions = ["subvol=log" "compress=zstd" "noatime"];
+                  };
+                  "/swap" = {
+                    mountpoint = "/swap";
+                    swap.swapfile.size = "8G";
                   };
                 };
               };
@@ -60,4 +58,8 @@
         };
       };
     };
+  };
+
+  fileSystems."/persist".neededForBoot = true;
+  fileSystems."/var/log".neededForBoot = true;
 }
