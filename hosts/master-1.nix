@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ ... }: {
   imports = [ ../nixos/configuration.nix ../config/networking.nix];
   networkConf = {
     ipAddress = "10.1.2.11";
