@@ -9,7 +9,7 @@
 
   boot.loader.grub = {
     enable = true;
-    device = "/dev/sda";
+    device = "/dev/sda1";
     useOSProber = true;
   };
 
