@@ -9,7 +9,7 @@ let
   docker-master-1 =
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJqgh0O6WhT8sW/8TIAQ+dGCjjBD4/nGDPiBGIhBCW2G";
   docker-master-2 =
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIM58cq1Tt1F4nVlnZZqwoGoMM3SiqY6GZUUfFlJ0cQNZ";
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDkXWl601W/y+weEkBRUFz6mK7mz0mLJ/gncqh2qtk70";
   docker-worker-1 =
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGMIOqm0uHvm14QnptY7GXrcfREICKS9vc3QaZSPeuyK";
   docker-worker-2 =
@@ -17,7 +17,7 @@ let
   docker-worker-3 =
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKjCrk2o0KRZ/gdDE4uOEPs93tb+RVYMWWH/YqWoF1jp";
   docker-worker-4 =
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICZYEGNYCm78oN1bBlWiPoUzbos5N7paU6M+r+x+3FfY";
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOUMaViAS3MSH30GbL3quq657MsQicJEgl8IYKFD36PI";
   servers = [ docker-master-1 docker-master-2 docker-worker-1 docker-worker-2 docker-worker-3 docker-worker-4 ];
 in {
   "local-smb.age".publicKeys = users ++ servers;
