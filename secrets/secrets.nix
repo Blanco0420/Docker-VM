@@ -20,8 +20,6 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOUMaViAS3MSH30GbL3quq657MsQicJEgl8IYKFD36PI";
   servers = [ docker-master-1 docker-master-2 docker-worker-1 docker-worker-2 docker-worker-3 docker-worker-4 ];
 in {
-  "local-smb.age".publicKeys = users ++ servers;
-  "external-smb.age".publicKeys = users ++ servers;
   "docker-ssh-key.age".publicKeys = users ++ servers;
   "comin-auth-token.age".publicKeys = users ++ servers;
   "glusterca.age".publicKeys = users ++ servers;
