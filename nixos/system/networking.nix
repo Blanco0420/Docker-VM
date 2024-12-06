@@ -3,12 +3,7 @@
     networkmanager.enable = true;
     defaultGateway = "10.1.2.1";
     nameservers = [ "10.1.2.1" "1.1.1.1" "1.0.0.1" ];
-    firewall = {
-      enable = true;
-      allowedTCPPorts =
-        [ 22 111 2376 2377 7946 4789 24007 24008 { from = 49152; to = 49156; }  ]; # Allow SSH and Docker Swarm ports
-      allowedUDPPorts = [ 7946 4789 111 ]; # Allow Docker Swarm UDP ports
-    };
+    firewall.enable = false;
     extraHosts =
     ''
       10.1.2.11 docker-master-1
