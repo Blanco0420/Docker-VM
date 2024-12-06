@@ -34,7 +34,7 @@ in {
   "glusterkey-docker-worker-2.age".publicKeys = users ++ [docker-worker-2];
   "glusterpem-docker-worker-2.age".publicKeys = users ++ [docker-worker-2];
   "glusterkey-docker-worker-3.age".publicKeys = users ++ [docker-worker-3];
-  "glusterpem-docker-worker-3.age".publicKeys = users ++ [docker-worker-4];
+  "glusterpem-docker-worker-3.age".publicKeys = users ++ [docker-worker-3];
   "glusterkey-docker-worker-4.age".publicKeys = users ++ [docker-worker-4];
   "glusterpem-docker-worker-4.age".publicKeys = users ++ [docker-worker-4];
 }
