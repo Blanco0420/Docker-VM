@@ -15,7 +15,7 @@ let
   docker-worker-2 =
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMAA1FtsuQF0E5wBXFtmSR1KQdVX0nAyRoIB8xHaB6dT";
   docker-worker-3 =
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKjCrk2o0KRZ/gdDE4uOEPs93tb+RVYMWWH/YqWoF1jp";
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHqYCU5l/mKQ+xu7GSzXZS2NViBcLEht56f4+df7PcWJ";
   docker-worker-4 =
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOUMaViAS3MSH30GbL3quq657MsQicJEgl8IYKFD36PI";
   servers = [ docker-master-1 docker-master-2 docker-worker-1 docker-worker-2 docker-worker-3 docker-worker-4 ];
