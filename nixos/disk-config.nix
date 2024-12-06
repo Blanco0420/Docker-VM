@@ -39,9 +39,9 @@
                     mountpoint = "/nix";
                     mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
                   };
-                  "/gluster" = {
-                    mountpoint = "/gluster";
-                    mountOptions = ["subvol=gluster" "compress=zstd" "noatime"];
+                  "/persist" = {
+                    mountpoint = "/persist";
+                    mountOptions = ["subvol=persist" "compress=zstd" "noatime"];
                   };
                   "/log" = {
                     mountpoint = "/var/log";
