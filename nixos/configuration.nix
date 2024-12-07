@@ -47,6 +47,7 @@
     systemd
     cifs-utils
     qemu
+    sshfs
   ];
 
   age.secrets = {
