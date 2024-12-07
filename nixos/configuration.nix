@@ -51,7 +51,7 @@
   ];
 
   age.secrets = {
-    docker-ssh-key.file = ../secrets/docker-ssh-key.age;
+    external-smb.file = ../secrets/external-smb.age;
     glusterca.file = ../secrets/glusterca.age;
   };
   

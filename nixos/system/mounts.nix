@@ -1,15 +1,7 @@
 { config, ... }: {
   fileSystems."/mnt/external-docker" = {
-    device = "u421299-sub4@u421299-sub4.your-storagebox.de";
-    fsType = "fuse.sshfs";
-    options = [
-      "identityfile=${config.age.secrets.docker-ssh-key.path}"
-      "idmap=user"
-      "x-systemd.automount"
-      "allow_other"
-      "user"
-      "_netdev"
-    ];
+    device = "//u421299-sub4.your-storagebox.de/u421299-sub4";
+    fsType = "cifs";
+    options = [ "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,user,users,credentials=${config.age.secrets.external-smb.path},uid=${toString config.users.users.docker.uid},gid=${toString config.users.groups.docker.gid}" ];
   };
-  boot.supportedFilesystems."fuse.sshfs" = true;
 }
