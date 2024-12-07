@@ -1,6 +1,6 @@
 { config, ... }: {
   fileSystems."/mnt/external-docker" = {
-    device = "u421299-sub4@u421299.your-storagebox.de:docker-mount";
+    device = "u421299-sub4@u421299.your-storagebox.de:/docker-mount";
     fsType = "fuse.sshfs";
     options = [
       "identityfile=${config.age.secrets.docker-ssh-key.path}"
