@@ -9,14 +9,14 @@
         PasswordAuthentication = false;
       };
     };
-    glusterfs = {
-      enable = true;
-      tlsSettings = {
-        tlsPem = "${config.age.secrets.glusterpem.path}";
-        tlsKeyPath = "${config.age.secrets.glusterkey.path}";
-        caCert = "${config.age.secrets.glusterca.path}";
-      };
-    };
+    # glusterfs = {
+    #   enable = true;
+    #   tlsSettings = {
+    #     tlsPem = "${config.age.secrets.glusterpem.path}";
+    #     tlsKeyPath = "${config.age.secrets.glusterkey.path}";
+    #     caCert = "${config.age.secrets.glusterca.path}";
+    #   };
+    # };
   };
 
   virtualisation.docker = {
