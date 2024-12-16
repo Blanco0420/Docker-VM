@@ -1,12 +1,12 @@
-{ config, pkgs, lib, ... }:
+{ config, lib, ... }:
 
 {
   options.networkConf = {
     ipAddress = lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
     };
     hostname = lib.mkOption {
-      type = lib.types.string;
+      type = lib.types.str;
     };
   };
   config = {
