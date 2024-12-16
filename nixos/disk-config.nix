@@ -39,9 +39,9 @@
                     mountpoint = "/nix";
                     mountOptions = ["subvol=nix" "compress=zstd" "noatime"];
                   };
-                  "/persist" = {
-                    mountpoint = "/persist";
-                    mountOptions = ["subvol=persist" "compress=zstd" "noatime"];
+                  "/data" = {
+                    mountpoint = "/data";
+                    mountOptions = ["subvol=data" "compress=zstd" "noatime"];
                   };
                   "/log" = {
                     mountpoint = "/var/log";
