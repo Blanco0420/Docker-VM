@@ -31,6 +31,7 @@
                   name = "origin";
                   url = "https://github.com/Blanco0420/Docker-VM.git";
                   branches.main.name = "main";
+                  poller.period = 300;
                   #                  branches.testing.name = "beta";
                   #                  auth.access_token_path = ${config.age.secrets.comin-auth-token.path};
                 }];
@@ -54,6 +55,7 @@
                   name = "origin";
                   url = "https://github.com/Blanco0420/Docker-VM.git";
                   branches.main.name = "main";
+                  poller.period = 300;
                   #                  branches.testing.name = "beta";
                   #                  auth.access_token_path = ${config.age.secrets.comin-auth-token.path};
                 }];
@@ -77,6 +79,7 @@
                   name = "origin";
                   url = "https://github.com/Blanco0420/Docker-VM.git";
                   branches.main.name = "main";
+                  poller.period = 300;
                   #                  branches.testing.name = "beta";
                   #                  auth.access_token_path = ${config.age.secrets.comin-auth-token.path};
                 }];
@@ -100,6 +103,7 @@
                   name = "origin";
                   url = "https://github.com/Blanco0420/Docker-VM.git";
                   branches.main.name = "main";
+                  poller.period = 300;
                   #                  branches.testing.name = "beta";
                   #                  auth.access_token_path = ${config.age.secrets.comin-auth-token.path};
                 }];
@@ -123,6 +127,7 @@
                   name = "origin";
                   url = "https://github.com/Blanco0420/Docker-VM.git";
                   branches.main.name = "main";
+                  poller.period = 300;
                   #                  branches.testing.name = "beta";
                   #                  auth.access_token_path = ${config.age.secrets.comin-auth-token.path};
                 }];
@@ -146,6 +151,7 @@
                   name = "origin";
                   url = "https://github.com/Blanco0420/Docker-VM.git";
                   branches.main.name = "main";
+                  poller.period = 300;
                   #                  branches.testing.name = "beta";
                   #                  auth.access_token_path = ${config.age.secrets.comin-auth-token.path};
                 }];
