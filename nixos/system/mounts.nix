@@ -11,9 +11,9 @@ in
       options = [ "${mountops},uid=${toString config.users.users.docker.uid},gid=${toString config.users.groups.docker.gid},credentials=${config.age.secrets.external-smb.path}" ];
     };
     gluster = {
-      device = "/persist/glustervol";
+      device = "localhost:/persist/glustervol";
       mountPoint = "/mnt/gluster";
-      fsType = "xfs";
+      fsType = "glusterfs";
       options = [ "${mountops},uid=${toString config.users.users.docker.uid},gid=${toString config.users.groups.docker.gid}" ];
     };
   };
