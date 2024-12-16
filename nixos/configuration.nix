@@ -25,7 +25,7 @@
 
   nixpkgs = {
     overlays = [ ];
-    config = { allowUnfree = true; };
+    config.allowUnfree = true;
   };
 
   nix =
