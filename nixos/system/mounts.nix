@@ -14,7 +14,6 @@ in
       device = "localhost:/persist/glustervol";
       mountPoint = "/mnt/gluster";
       fsType = "glusterfs";
-      options = [ "uid=${toString config.users.users.docker.uid},gid=${toString config.users.groups.docker.gid}" ];
     };
   };
 }
