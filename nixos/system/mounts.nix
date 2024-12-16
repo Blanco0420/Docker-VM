@@ -11,7 +11,7 @@ in
       options = [ "forceuid,forcegid,${cifsmountops},uid=${toString config.users.users.docker.uid},gid=${toString config.users.groups.docker.gid},credentials=${config.age.secrets.external-smb.path}" ];
     };
     gluster = {
-      device = "localhost:/persist/glustervol";
+      device = "localhost:/data/glustervol";
       mountPoint = "/mnt/gluster";
       fsType = "glusterfs";
     };
